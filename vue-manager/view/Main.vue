@@ -31,7 +31,7 @@ export default {
     CommonTag
   },
   created(){
-      this.$store.commit("addMenu", this.$router); // router 组件注册
+      // this.$store.commit("addMenu", this.$router); // router 组件注册
   }
 };
 </script>

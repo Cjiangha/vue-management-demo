@@ -41,11 +41,10 @@ export default {
       this.$store.state.tab.isCollapse = !this.$store.state.tab.isCollapse;
     },
     quit(){
-      console.log('点我点我')
+      this.$store.commit('clearToken')
       this.$router.push('/login')
     },
     shouye(){
-      console.log('点我点我')
       this.$router.push('/')
     }
   },

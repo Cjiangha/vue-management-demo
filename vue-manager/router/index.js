@@ -8,7 +8,7 @@
  */
 import VueRouter from "vue-router";
 import Vue from "vue";
-import Main from '../view/Main'
+// import Main from '../view/Main'
 
 
 const originalPush = VueRouter.prototype.push

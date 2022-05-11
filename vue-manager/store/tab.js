@@ -4,7 +4,7 @@ export default {
     isCollapse: false,
     tabsList: [
       {
-        path: "/",
+        path: "/home",
         name: "home",
         label: "首页",
         icon: "home",
@@ -17,8 +17,9 @@ export default {
     collapsemenu(state) {
       state.isCollapse = !state.isCollapse;
     },
-    //  selectMenu(state,val) state->仓库的state 进行比较
-    // 我的理解：val(即页面拿到的item值)->与state中的值进行匹配  仓库state 与我们拿的路由值(item.name)进行比较
+
+    // selectMenu(state,val) state->仓库的state 进行比较
+    // val(即页面拿到的item值)->与state中的值进行匹配  仓库state 与我们拿的路由值(item.name)进行比较
     selectMenu(state, val) {
       console.log("selectMenu", state, val);
       if (val.name !== "home") {
@@ -37,6 +38,7 @@ export default {
         state.currentMenu = null;
       }
     },
+    // 删除面包屑对应的tab
     closeTag(state, val) {
       const result = state.tabsList.findIndex((item) => item.name === val.name); //找到索引值
       state.tabsList.splice(result, 1); //删除索引值对应的listitem
@@ -55,10 +57,11 @@ export default {
         Cookies.set("menu", JSON.stringify(state.menu));
       }else{
         const menu = JSON.parse(Cookies.get('menu'))
+        console.log('menu----------------------------------',menu)
         state.menu = menu
         const menuArray =[]
         menu.forEach(item=>{
-          if(item.children){//item.children 有值
+          if(item.children){//item.children 有值的时候返回true
             item.children = item.children.map(item=>{
               item.component = ()=> import(`../view/${item.url}`)
               return item

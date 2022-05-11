@@ -19,6 +19,7 @@ import { mapState, mapMutations } from "vuex";
 
 export default {
   methods: {
+    // close 返回 mutation下的closeTag方法
     ...mapMutations({
       close: "closeTag",
     }),

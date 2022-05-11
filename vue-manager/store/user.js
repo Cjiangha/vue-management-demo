@@ -1,10 +1,10 @@
-import Cookies from "js-Cookies";
+import Cookies from "js-Cookie";
 
 export default {
   state: {
     token: "",
   },
-  mutation: {
+  mutations: {
     //设置token
     setToken(state, val) {
       state.token = val;

@@ -44,7 +44,7 @@ export default {
         code: 20000,
         data: {
           menu: [{
-              path: '/',
+              path: '/home',
               name: 'home',
               label: '首页',
               icon: 's-home',
@@ -93,7 +93,7 @@ export default {
         code: 20000,
         data: {
           menu: [{
-              path: '/',
+              path: '/home',
               name: 'home',
               label: '首页',
               icon: 's-home',
