@@ -42,3 +42,6 @@ vue demo . Use  Vue 2.6.11+element-UI 2.15.6+mock.js+axios
 ### 项目视频地址
 
 [前端项目/vue项目实战/vue+element-ui](https://www.bilibili.com/video/BV1QU4y1E7qo?p=6)
+
+### 踩坑记录
+[踩坑记录]('./踩坑记录.md')
