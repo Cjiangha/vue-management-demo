@@ -24,7 +24,6 @@ GitHub action支持Push驱动，启动一小虚拟机，帮助我们跑Build和s
 
 
 2. name.yml   
-    [大圣的yml](https://github.com/shengxinjing/it-roadmap/actions/runs/1890874321/workflow)
 
 
    yml为后缀名称是什么？其实是YAML的配置文件。
@@ -92,7 +91,9 @@ jobs:
               with
 
 
-### 具体的case：
+### 具体的case
+参照：[大圣的yml](https://github.com/shengxinjing/it-roadmap/actions/runs/1890874321/workflow)
+
 # This is a basic workflow to help you get started with Actions
 
 name: deploy
