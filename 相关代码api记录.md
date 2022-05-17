@@ -82,7 +82,8 @@ export default new HttpRequest(baseUrl)
 */    
 
 
-    router.beforeEach((to, from, next) => {
+//路由守卫   用的比较多的是 to 和 next参数
+router.beforeEach((to, from, next) => {
   store.commit('getToken') // 清除token
   const token = store.state.user.token
   console.log('token--------', token)
@@ -94,7 +95,7 @@ export default new HttpRequest(baseUrl)
   } else if(token && to.name !=='login'){
     next({ name: 'home' })
   }else if(!token && to.name == 'login'){
-
+    next({ name: 'login' })
   }
 })
 
