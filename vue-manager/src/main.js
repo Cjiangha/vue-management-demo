@@ -36,8 +36,10 @@ router.beforeEach((to, from, next) => {
     next({ name: 'login' })
   } else if (token && to.name === 'login') { //来源是登录页 带token
     next({ name: 'home' })
-  } else {
-    next()
+  } else if(token && to.name !=='login'){
+    next({ name: 'home' })
+  }else if(!token && to.name == 'login'){
+    next({ name: 'login' })
   }
 })
 // Vue.use(ElementUI)
