@@ -1,4 +1,8 @@
 # vue-management-demo
+### 体验地址
+**[vue-manager](https://cjiangha.github.io/vue-manager/dist/)**
+
+
 ### 功能详情
 
 * 登录
