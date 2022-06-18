@@ -31,7 +31,7 @@
 
 ### 技术栈
 
-vue demo . Use  Vue 2.6.11+element-UI 2.15.6+mock.js+axios
+vue demo . Use  Vue-cli 4.5.11+Vue 2.6.11+element-UI 2.15.6+mock.js+axios
 
 ### 页面截图
 
