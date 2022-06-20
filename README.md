@@ -1,4 +1,8 @@
 # vue-management-demo
+### 体验地址
+**[vue-manager](https://cjiangha.github.io/vue-manager/dist/)**
+
+
 ### 功能详情
 
 * 登录
@@ -27,7 +31,10 @@
 
 ### 技术栈
 
-vue demo . Use  Vue 2.6.11+element-UI 2.15.6+mock.js+axios
+vue demo . Use  Vue-cli 4.5.11+Vue 2.6.11+element-UI 2.15.6+mock.js+axios
+
+package.json下的版本，我的理解是vue + vue-router + vuex 这个适配度是最合适的
+"vue": "^2.6.14","vue-router": "^3.5.3", "vuex": "^3.6.2" ，vue-cli:"^ 4.5.11"
 
 ### 页面截图
 
