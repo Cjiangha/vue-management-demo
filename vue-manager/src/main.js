@@ -32,14 +32,12 @@ router.beforeEach((to, from, next) => {
   const token = store.state.user.token
   console.log('token--------', token)
   console.log(token)
-  if (!token && to.name !== 'login') {// 没token也不来自登录页
-    next({ name: 'login' })
-  } else if (token && to.name === 'login') { //来源是登录页 带token
-    next({ name: 'home' })
-  } else if(token && to.name !=='login'){
-    next({ name: 'home' })
-  }else if(!token && to.name == 'login'){
-    next({ name: 'login' })
+  if(!token && to.name !== 'login') { 
+     next({name: 'login'})
+  } else if (token && to.name === 'login') {
+     next({name: 'home'})
+  } else {
+     next() 
   }
 })
 // Vue.use(ElementUI)
