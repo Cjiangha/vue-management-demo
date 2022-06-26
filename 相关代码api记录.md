@@ -40,7 +40,7 @@ class HttpRequest {
     request(options){
         const instance = axios.create()
         options = {...this.getInsideConfig(),...options}
-        this.instencepotors(instance) // 调用拦截器
+        this.instencepotors(instance) // 调用拦截器，即使用了工厂模式的装饰器模式
         return instance(options)
     }
 }
@@ -71,31 +71,26 @@ export default new HttpRequest(baseUrl)
        路由守卫 befreEach(to,next){
            if  无token 不是来自登录页
                 跳转 login
-           if 有token 切来自登录页
+           if 有token 且来自登录页
                 跳转home
-           if 有token  不来自登录页
-                跳转home
-            if  无token 来自登录页
-                next login
        }
 
 */    
 
 
 //路由守卫   用的比较多的是 to 和 next参数
+//路由守卫   用的比较多的是 to 和 next参数
 router.beforeEach((to, from, next) => {
   store.commit('getToken') // 清除token
   const token = store.state.user.token
   console.log('token--------', token)
   console.log(token)
-  if (!token && to.name !== 'login') {// 没token也不来自登录页
-    next({ name: 'login' })
-  } else if (token && to.name === 'login') { //来源是登录页 带token
-    next({ name: 'home' })
-  } else if(token && to.name !=='login'){
-    next({ name: 'home' })
-  }else if(!token && to.name == 'login'){
-    next({ name: 'login' })
+  if(!token && to.name !== 'login') { 
+     next({name: 'login'})
+  } else if (token && to.name === 'login') {
+     next({name: 'home'})
+  } else {
+     next() 
   }
 })
 
