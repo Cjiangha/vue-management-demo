@@ -50,5 +50,6 @@ package.json下的版本，我的理解是vue + vue-router + vuex 这个适配�
 
 [前端项目/vue项目实战/vue+element-ui](https://www.bilibili.com/video/BV1QU4y1E7qo?p=6)
 
-### 踩坑记录
+### 踩坑记录 相关代码api记录（未全部记录）
 [踩坑记录](https://github.com/Cjiangha/vue-management-demo/blob/master/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.md)
+[相关代码api记录](https://github.com/Cjiangha/vue-management-demo/blob/master/%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81api%E8%AE%B0%E5%BD%95.md)
