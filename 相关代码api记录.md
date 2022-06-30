@@ -1,6 +1,10 @@
+- [1、axios的二次封装](#1axios的二次封装)
+- [2、封装组件的思路，封装一个echart 的公共组件的思路](#2封装组件的思路封装一个echart-的公共组件的思路)
+- [3、Vuex](#3vuex)
+- [4、token+axios+路由守卫+js-cookie 实现路由拦截和请求拦截](#4tokenaxios路由守卫js-cookie-实现路由拦截和请求拦截)
+## 1、axios的二次封装
 ```js
-// 1、axios的二次封装
-    import axios from 'axios'
+   import axios from 'axios'
 import config from '../config'
 
 const baseUrl = process.env.NODE_ENV === 'development' ? config.baseUrl.dev : config.baseUrl.pro
@@ -46,10 +50,11 @@ class HttpRequest {
 }
 
 export default new HttpRequest(baseUrl)
+```
 
-
-
-/* 2、封装组件的思路，封装一个echart 的公共组件的思路
+## 2、封装组件的思路，封装一个echart 的公共组件的思路
+```js
+/* 
     1）、定义初始化的配置属性 initChart()
     2）、在chartData的属性值series、xData种，对chartData 使用watch进行深度监听chartData的数据的变化
     3）、isAxisChart 用来判断类型是饼状图 还是 折线图 / 柱形图，然后使用 computed 对 isAxisChart进行监计算，得到对应的
@@ -57,16 +62,22 @@ export default new HttpRequest(baseUrl)
 
 */
 
+```
 
+##  3、Vuex
+```js
 /*     
-    3、Vuex
+   
     state、Getter、Mutation、Action、Module（集成了state、mutation、action、getter）
     使用mapState、mapGetters、mapMutations、mapActions    
 */ 
        
+```
 
+##  4、token+axios+路由守卫+js-cookie 实现路由拦截和请求拦截
+```js
 /*
-    4、token+axios+路由守卫+js-cookie 实现路由拦截和请求拦截
+   
        token 登录 / 注册 状态锁
        路由守卫 befreEach(to,next){
            if  无token 不是来自登录页
@@ -74,7 +85,6 @@ export default new HttpRequest(baseUrl)
            if 有token 且来自登录页
                 跳转home
        }
-
 */    
 
 
@@ -93,6 +103,4 @@ router.beforeEach((to, from, next) => {
      next() 
   }
 })
-
 ```
-[]
