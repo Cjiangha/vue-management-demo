@@ -1,4 +1,4 @@
-import Cookies from "js-Cookie";
+import Cookies from "js-cookie";
 
 export default {
   state: {
