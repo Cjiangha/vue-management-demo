@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Dialag from './dialog/DialagComponent'
+import Dialag from './DialagComponent'
 export default {
   components:{
     Dialag
