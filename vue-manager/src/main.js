@@ -12,9 +12,10 @@ import {
   TableColumn, Tag
 } from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
+import '../config/common.css'
 import Vue from "vue"
 import '../api/mock'
-import '../src/assets/less/index.less'
+import '../src/assets/less/common.less'
 import store from '../store'
 import router from "./../router/index"
 import App from "./App.vue"
