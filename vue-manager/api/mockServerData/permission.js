@@ -67,22 +67,45 @@ export default {
             {
               label: '其他',
               icon: 'location',
+              name:'other',
               children: [{
-                  path: '/page1',
-                  name: 'page1',
+                  path: '/PageOne',
+                  name: 'PageOne',
                   label: '页面1',
                   icon: 'setting',
                   url: 'Other/PageOne'
                 },
                 {
-                  path: '/page2',
-                  name: 'page2',
+                  path: '/PageTwo',
+                  name: 'PageTwo',
                   label: '页面2',
                   icon: 'setting',
                   url: 'Other/PageTwo'
                 }
               ]
-            }
+            },
+            
+            {
+              label: 'Form',
+              icon: '',
+              name:'Form',
+              children: [
+                {
+                  path: '/DatePicker',
+                  name: 'DatePicker',
+                  label: 'DatePicker',
+                  icon: 'setting',
+                  url: 'elementDemo/Form/DatePicker/index'
+                },
+                {
+                  path: '/DateTimePicker',
+                  name: 'DateTimePicker',
+                  label: 'DateTimePicker',
+                  icon: 'setting',
+                  url: 'elementDemo/Form/DateTimePicker/index'
+                }
+              ]
+            },
           ],
           token: Mock.Random.guid(),
           message: '获取成功'

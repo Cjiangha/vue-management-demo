@@ -37,15 +37,15 @@ export default {
               icon: 'location',
               children: [
                 {
-                  path: '/page1',
-                  name: 'page1',
+                  path: '/PageOne',
+                  name: 'PageOne',
                   label: '页面1',
                   icon: 'setting',
                   url: 'Other/PageOne'
                 },
                 {
-                  path: '/page2',
-                  name: 'page2',
+                  path: '/PageTwo',
+                  name: 'PageTwo',
                   label: '页面2',
                   icon: 'setting',
                   url: 'Other/PageTwo'

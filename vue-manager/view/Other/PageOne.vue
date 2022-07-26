@@ -4,6 +4,7 @@
         <DialagComponent/>
 
         <MyClick/>
+        
         <MyClickTwo/>
 
         <Father/>

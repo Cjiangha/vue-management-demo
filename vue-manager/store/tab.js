@@ -44,6 +44,7 @@ export default {
       state.tabsList.splice(result, 1); //删除索引值对应的listitem
     },
 
+    // 设置导航
     setMenu(state, val) {
       state.menu = val;
       Cookies.set("menu", JSON.stringify(state.menu));
@@ -52,6 +53,7 @@ export default {
       state.menu = [];
       Cookies.remove("");
     },
+    // 添加menu
     addMenu(state,router){
       if(!Cookies.get('menu')){
         Cookies.set("menu", JSON.stringify(state.menu));
@@ -61,17 +63,17 @@ export default {
         state.menu = menu
         const menuArray =[]
         menu.forEach(item=>{
-          if(item.children){//item.children 有值的时候返回true
+          if(item.children){//item.children 有值的时候返回true，判断是否有二级导航
             item.children = item.children.map(item=>{
               item.component = ()=> import(`../view/${item.url}`)
               return item
             })
             menuArray.push(...item.children)
-            console.log('item.children',menuArray)
+            // console.log('item.children',menuArray)
           }else{
             item.component = ()=> import(`../view/${item.url}`)
             menuArray.push(item)
-            console.log('直接push   item',menuArray)
+            // console.log('直接push   item',menuArray)
           }
         })
         console.log('menuArray',menuArray)
