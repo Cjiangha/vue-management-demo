@@ -15,10 +15,12 @@ import "element-ui/lib/theme-chalk/index.css"
 import '../config/common.css'
 import Vue from "vue"
 import '../api/mock'
+import '../src/assets/less/index.less'
 import '../src/assets/less/common.less'
 import store from '../store'
 import router from "./../router/index"
 import App from "./App.vue"
+import * as echarts from "echarts";
 
 
 
@@ -26,13 +28,12 @@ Vue.config.productionTip = false
 Vue.prototype.$http = http
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$message = Message
+Vue.prototype.$echarts = echarts
 
 //路由守卫   用的比较多的是 to 和 next参数
 router.beforeEach((to, from, next) => {
   store.commit('getToken') // 清除token
   const token = store.state.user.token
-  console.log('token--------', token)
-  console.log(token)
   if(!token && to.name !== 'login') { 
      next({name: 'login'})
   } else if (token && to.name === 'login') {

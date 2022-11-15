@@ -167,18 +167,14 @@ export default {
   methods: {
     confirm: debounce(async function () {
       {
-        console.log("弹框确认");
-        console.log("operateForm", this.operateForm);
         if (this.operateType === "edit") {
           // 编辑
           this.$http.post("/user/edit", this.operateForm).then((res) => {
-            console.log(res);
             this.isShow = false;
           });
         } else if (this.operateType === "add") {
           //增加
           await this.$http.post("/user/add", this.operateForm).then((res) => {
-            console.log(res);
             this.isShow = false;
           });
         }
@@ -206,14 +202,10 @@ export default {
         cancelButtonText: "取消",
         type: "warning",
       }).then(() => {
-        console.log(row)
         let id = row.id;
-        console.log("--id--", id);
-        console.log("--row--", row);
         delUser({
           id: id,
         }).then((res) => {
-          console.log("res", res);
           this.$message({
             type: "success",
             message: "删除成功",
@@ -228,9 +220,7 @@ export default {
         // name,
       }).then(({ data: res }) => {
         
-        console.log("getList", res);
         this.tableData = res.list;
-        console.log('--tableData--',this.tableData)
         this.tableData = res.list.map((item) => {
           item.sexLabel = item.sex === 0 ? "女" : "男";
           return item;

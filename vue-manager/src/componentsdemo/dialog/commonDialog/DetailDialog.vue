@@ -48,7 +48,6 @@ export default {
     return {};
   },
   created() {
-    console.log(this.model);
   },
   methods: {
     onClose() {

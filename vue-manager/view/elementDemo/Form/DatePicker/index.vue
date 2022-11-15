@@ -2,34 +2,34 @@
   <div class="DatePicker">
     <h1>选项卡 点击正方形 切换 div</h1>
     <ul class="change">
-      <li class="pd cursor" @click="curId = 1">
+      <li class="pd cursor" @mousemove="curId = 1">
         <h4 class="title-index">选项1</h4>
-        <span class="choice">固定时间点 </span>
+        <span class="choice">选择日 </span>
       </li>
-      <li class="pd cursor" @click="curId = 2">
+      <li class="pd cursor" @mousemove="curId = 2">
         <h4 class="title-index">选项2</h4>
         <span class="choice">其他日期单位</span>
       </li>
-      <li class="pd cursor" @click="curId = 3">
+      <li class="pd cursor" @mousemove="curId = 3">
         <h4 class="title-index">选项3</h4>
         <span class="choice">选择日期范围</span>
       </li>
-      <li class="pd cursor" @click="curId = 4">
+      <li class="pd cursor" @mousemove="curId = 4">
         <h4 class="title-index">选项4</h4>
         <span class="choice">选择月份范围</span>
       </li>
-      <li class="pd cursor" @click="curId = 5">
+      <li class="pd cursor" @mousemove="curId = 5">
         <h4 class="title-index">选项5</h4>
         <span class="choice">日期格式</span>
       </li>
-      <li class="pd cursor" @click="curId = 6">
+      <li class="pd cursor" @mousemove="curId = 6">
         <h4 class="title-index">选项6</h4>
         <span class="choice">默认显示日期</span>
       </li>
     </ul>
 
     <div class="NO1" v-show="curId === 1">
-      <h1>Title: 固定时间点</h1>
+      <h1>Title: 选择日</h1>
       <Select-day />
     </div>
     <div class="NO2" v-show="curId === 2">
@@ -56,12 +56,15 @@
 </template>
 
 <script>
+/* 组件 */
 import SelectDay from "./components/SelectDay";
 import OtherDate from "./components/OtherDate";
 import ChoiceDayRange from "./components/ChoiceDayRange";
 import ChoiceMonthRange from "./components/ChoiceMonthRange";
 import ShowDateDefault from "./components/ShowDateDefault";
 import DateFormat from "./components/DateFormat"
+
+
 
 export default {
   components: {

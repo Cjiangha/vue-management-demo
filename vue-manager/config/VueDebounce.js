@@ -9,7 +9,6 @@ export default function debounce(fn, time) {
         clearTimeout(timer)
       }
       timer = setTimeout(function() {
-          console.log('time---',)
         timer = null
         fn.apply(_this, args)
       }, time)
