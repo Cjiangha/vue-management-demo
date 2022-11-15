@@ -2,6 +2,10 @@
   <div ref="myChart" style="width: 100%; height: 520px" id="myChart"></div>
 </template>
 <script>
+/*   
+  案例网址：
+   https://echarts.apache.org/examples/zh/index.html#chart-type-line
+*/
 export default {
   methods: {
     getOption() {

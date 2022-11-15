@@ -31,12 +31,10 @@ export default {
      }
   */
   getMenu: config => {
-    console.log(config);
     const {
       username,
       password
     } = JSON.parse(config.body)
-    console.log(JSON.parse(config.body))
     // 先判断用户是否存在
     // 判断账号和密码是否对应
     if (username === 'admin' && password === 'admin') {
@@ -76,11 +74,11 @@ export default {
                   url: 'Other/PageOne'
                 },
                 {
-                  path: '/PageTwo',
-                  name: 'PageTwo',
-                  label: '页面2',
+                  path: '/echatTest',
+                  name: 'echatTest',
+                  label: 'Echat-Test',
                   icon: 'setting',
-                  url: 'Other/PageTwo'
+                  url: 'Other/echatTest'
                 }
               ]
             },
@@ -91,20 +89,28 @@ export default {
               name:'Form',
               children: [
                 {
+                  path: '/TimePicker',
+                  name: 'TimePicker 时间选择器',
+                  label: 'TimePicker',
+                  icon: 'setting',
+                  url: 'elementDemo/Form/TimePicker/index'
+                },
+                {
                   path: '/DatePicker',
-                  name: 'DatePicker',
-                  label: 'DatePicker',
+                  name: 'DatePicker 日期选择器',
+                  label: 'DatePicker 日期选择器',
                   icon: 'setting',
                   url: 'elementDemo/Form/DatePicker/index'
                 },
                 {
                   path: '/DateTimePicker',
-                  name: 'DateTimePicker',
+                  name: 'DateTimePicker 日期时间选择器',
                   label: 'DateTimePicker',
                   icon: 'setting',
                   url: 'elementDemo/Form/DateTimePicker/index'
                 }
-              ]
+              ],
+
             },
           ],
           token: Mock.Random.guid(),
