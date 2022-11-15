@@ -21,7 +21,6 @@ export default {
     // selectMenu(state,val) state->仓库的state 进行比较
     // val(即页面拿到的item值)->与state中的值进行匹配  仓库state 与我们拿的路由值(item.name)进行比较
     selectMenu(state, val) {
-      console.log("selectMenu", state, val);
       if (val.name !== "home") {
         // 当点击的不为home
         state.currentMenu = val;
@@ -59,7 +58,6 @@ export default {
         Cookies.set("menu", JSON.stringify(state.menu));
       }else{
         const menu = JSON.parse(Cookies.get('menu'))
-        console.log('menu----------------------------------',menu)
         state.menu = menu
         const menuArray =[]
         menu.forEach(item=>{
@@ -76,7 +74,6 @@ export default {
             // console.log('直接push   item',menuArray)
           }
         })
-        console.log('menuArray',menuArray)
         
         //路由动态添加
         // 添加一条新的路由记录作为现有路由的子路由。如果路由有一个 name，并且已经有一个与之名字相同的路由，它会先删除之前的路由。

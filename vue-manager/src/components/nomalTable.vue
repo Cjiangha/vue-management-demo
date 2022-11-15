@@ -54,7 +54,6 @@ export default {
         page,
         // name,
       }).then(({ data: res }) => {
-        console.log("getList", res);
         this.tableData = res.list;
         this.tableData = res.list.map((item) => {
           //  第一种写法：
@@ -82,12 +81,9 @@ export default {
         type: "warning",
       }).then(() => {
         const id = row.id;
-        console.log("--id--", id);
-        console.log("--row--", row);
         delUser({
           id: id,
         }).then((res) => {
-          console.log("res", res);
           this.$message({
             type: "success",
             message: "删除成功",
@@ -103,7 +99,6 @@ export default {
   },
   created() {
     this.getList(this.config.page);
-    console.log("--props--", this.$options.propsData);
   },
 };
 </script>

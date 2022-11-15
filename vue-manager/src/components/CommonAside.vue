@@ -115,20 +115,18 @@ export default {
     };
   },
   mounted() {
-    console.log("haschildren()", this.haschildren);
-     console.log("nochildren()", this.nochildren);
     this.syncMenu
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      // console.log(key, keyPath);
     },
 
     goto(item) {
-      console.log(`/${item.name}`);
+      // console.log(`/${item.name}`);
 
       // 1、常规方法
       // this.$router.push('item.path')
@@ -155,15 +153,11 @@ export default {
   computed: {
     // 该路由下没有子菜单
     nochildren() {
-      // return this.MenuJson.filter((item) => !item.children);
-      // console.log('this.syncMenu',this.MenuJson)
-      // console.log('---nochildren--',this.MenuJson.filter(item => !item.children))
       return this.MenuJson.filter((item) => !item.children);
     },
 
     // 该路由下有子菜单
     haschildren() {
-      // console.log('---haschildren--',this.MenuJson.filter((item) => item.children))
       return this.MenuJson.filter((item) => item.children);
     },
 
@@ -172,8 +166,6 @@ export default {
     },
     syncMenu() {
        //判断 Cookie里面是否有 menu，有-> cookie 没有
-    // this.asyncMenu = this.syncMenu;
-    // console.log("asyncMenu()", this.$store.state);
     const menu = Cookies.get('menu');
     console.log(menu)
     if(menu){ // 有cookie
@@ -193,7 +185,7 @@ export default {
 
 <style lang="less" scope>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+  width: 220px;
   min-height: 400px;
 }
 

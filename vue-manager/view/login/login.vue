@@ -71,7 +71,6 @@ export default {
       // this.$router.push({name:'home'})
       getMenu(this.form).then(({ data: res }) => {
         if (res.code === 20000) {
-          console.log("res.data.menu", res.data.menu);
           this.$store.commit("clearMenu"); //清除 导航菜单路由
           this.$store.commit("setMenu", res.data.menu); // 设置路由给导航使用
           this.$store.commit("setToken", res.data.token); //设置token

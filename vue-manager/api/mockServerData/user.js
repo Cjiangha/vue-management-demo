@@ -3,7 +3,6 @@ import Mock from 'mockjs'
 // get请求从config.url获取参数，post从config.body中获取参数
 function param2Obj(url) {
   const search = url.split('?')[1]
-  console.log(search)
   if (!search) { //非?
     return {}
   }
@@ -66,7 +65,6 @@ export default {
       page = 1,
       limit = 20
     } = param2Obj(config.url)
-    console.log('name:' + name, 'page:' + page, '分页大小limit:' + limit)
     const mockList = List.filter(user => {
       if (name && user.name.indexOf(name) === -1 && user.addr.indexOf(name) === -1) return false
       return true
@@ -93,7 +91,6 @@ export default {
       birth,
       sex
     } = JSON.parse(config.body)
-    console.log(JSON.parse(config.body))
     // unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度(该方法修改原有数组)。
     List.unshift({
       id: Mock.Random.guid(),
