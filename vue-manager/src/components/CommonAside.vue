@@ -10,7 +10,6 @@
       text-color="#fff"
       active-text-color="#FFD04B"
       mode="vertical"
-      unique-opened="true"
     >
       <h3>
         {{
@@ -167,12 +166,9 @@ export default {
     syncMenu() {
        //判断 Cookie里面是否有 menu，有-> cookie 没有
     const menu = Cookies.get('menu');
-    console.log(menu)
     if(menu){ // 有cookie
        this.MenuJson = JSON.parse(menu)
       //  return this.$store.state.tab.menu
-      console.log('this.MenuJson',this.MenuJson)
-      console.log('menu',menu)
       return this.MenuJson
     }else{ //无cookie 不存在
        return  this.MenuJson
